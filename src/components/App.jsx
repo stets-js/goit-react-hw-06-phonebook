@@ -3,6 +3,7 @@ import nextId from 'react-id-generator';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
+import css from './App.module.css'
 
 export default class App extends Component {
   state = {
@@ -49,10 +50,10 @@ export default class App extends Component {
     );
 
     return (
-      <>
-        <h1>Phonebook</h1>
+      <div className={css.container}>
+        <h1 className={css.title}>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
-        <h2>Contacts</h2>
+        <h2 className={css.title}>Contacts</h2>
         <Filter filter={filter} filterChange={this.filterChange} />
 
         <ContactList
@@ -60,7 +61,7 @@ export default class App extends Component {
           deleteContact={this.deleteContact}
           filteredName={filter}
         />
-      </>
+      </div>
     );
   }
 }

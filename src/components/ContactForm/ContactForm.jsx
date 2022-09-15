@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import css from './ContactForm.module.css'
 
 class ContactForm extends Component {
   state = {
@@ -23,10 +24,11 @@ formSubmit = e => {
 
   render() {
     return (
-      <form onSubmit={this.formSubmit}>
+      <form className={css.form} onSubmit={this.formSubmit}>
         <label>
-          <p>Name</p>
+          <p className={css.title}>Name</p>
           <input
+            className={css.input}
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -37,8 +39,9 @@ formSubmit = e => {
           />
         </label>
         <label>
-          <p>Number</p>
+          <p  className={css.title}>Number</p>
           <input
+            className={css.input}
             type="tel"
             name="number"
             value={this.state.number}
@@ -48,7 +51,7 @@ formSubmit = e => {
             required
           />
         </label>
-        <button>Add contact</button>
+        <button className={css.btn}>Add contact</button>
       </form>
     );
   }
