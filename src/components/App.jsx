@@ -38,16 +38,15 @@ export default class App extends Component {
   };
 
   filterChange = e => {
-    this.setState({ [e.currentTarget.name]: e.currentTarget.value });
+    this.setState({filter: e.currentTarget.value });
   };
 
   render() {
     const { filter, contacts } = this.state;
 
     const lowercasedName = filter.toLowerCase();
-    const filteredContacts = contacts.filter(contacts =>
-      contacts.name.toLowerCase().includes(lowercasedName)
-    );
+    const filteredContacts = this.state.filter !== '' ? contacts.filter(contacts =>
+      contacts.name.toLowerCase().includes(lowercasedName)) : [];
 
     return (
       <div className={css.container}>
