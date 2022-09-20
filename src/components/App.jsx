@@ -13,7 +13,7 @@ export default class App extends Component {
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
-    filter: '',
+    filter:'',
   };
 
   componentDidMount() {
@@ -58,10 +58,8 @@ export default class App extends Component {
 
   render() {
     const { filter, contacts } = this.state;
-
-    const lowercasedName = filter.toLowerCase();
-    const filteredContacts = contacts.filter(contacts =>
-      contacts.name.toLowerCase().includes(lowercasedName));
+    // const lowercasedName = filter.toLowerCase();
+    // const filteredContacts = contacts.filter(contacts => contacts.name.toLowerCase().includes(lowercasedName));
 
     return (
       <div className={css.container}>
@@ -71,7 +69,7 @@ export default class App extends Component {
         <Filter filter={filter} filterChange={this.filterChange} />
 
         <ContactList
-          contacts={filteredContacts}
+          contacts={contacts}
           deleteContact={this.deleteContact}
           filteredName={filter}
         />
