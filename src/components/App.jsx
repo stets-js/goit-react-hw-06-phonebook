@@ -60,8 +60,8 @@ export default class App extends Component {
     const { filter, contacts } = this.state;
 
     const lowercasedName = filter.toLowerCase();
-    const filteredContacts = this.state.filter !== '' ? contacts.filter(contacts =>
-      contacts.name.toLowerCase().includes(lowercasedName)) : [];
+    const filteredContacts = contacts.filter(contacts =>
+      contacts.name.toLowerCase().includes(lowercasedName));
 
     return (
       <div className={css.container}>

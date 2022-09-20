@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import css from './ContactList.module.css'
 
-
-
-class ContactList extends Component {
-
-    
-    
+class ContactList extends Component { 
   render() {
       return (
       <ul className={css.ul}>
