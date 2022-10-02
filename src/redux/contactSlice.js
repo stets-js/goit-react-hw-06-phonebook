@@ -25,11 +25,18 @@ export const ContactsSlice = createSlice({
     },
 
     removeContact(state, action) {
-      state.contacts.filter(item => item.id !== action.payload);
+      state.contacts = state.contacts.filter(
+        item => item.id !== action.payload
+      );
+    },
+
+    filterContact(state, action) {
+      state.filter = action.payload.toLowerCase();
     },
   },
 });
 
-export const { addContact, removeContact } = ContactsSlice.actions;
+export const { addContact, removeContact, filterContact } =
+  ContactsSlice.actions;
 
 export default ContactsSlice.reducer;
